@@ -4,170 +4,172 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Mourish Education</title>
-  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background-color: #f9f9f9;
+    }
+
+    header {
+      background-color: #0077b6;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 36px;
+    }
+
+    header p {
+      margin-top: 10px;
+      font-size: 18px;
+    }
+
+    section {
+      padding: 30px 20px;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h2 {
+      color: #0077b6;
+      margin-bottom: 10px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      background: white;
+      padding: 15px;
+      margin-bottom: 10px;
+      border-left: 5px solid #0077b6;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    }
+
+    form input, form select {
+      padding: 10px;
+      width: 90%;
+      max-width: 400px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      margin-bottom: 10px;
+    }
+
+    form button, .print-btn, .call-btn, .whatsapp-btn {
+      display: inline-block;
+      margin: 10px 10px 0 0;
+      padding: 12px 20px;
+      font-size: 16px;
+      text-decoration: none;
+      border-radius: 8px;
+      color: white;
+      cursor: pointer;
+      border: none;
+    }
+
+    .call-btn {
+      background-color: #28a745;
+    }
+
+    .whatsapp-btn {
+      background-color: #25D366;
+    }
+
+    .print-btn, form button {
+      background-color: #0077b6;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 26px;
+      }
+
+      form input, form select, form button, .print-btn {
+        width: 100%;
+      }
+
+      .call-btn, .whatsapp-btn {
+        width: 100%;
+        margin: 10px 0;
+      }
+    }
+  </style>
 </head>
 <body>
-  <style>
-    /* Reset and base styles */
-body {
-  font-family: 'Segoe UI', sans-serif;
-  margin: 0;
-  background-color: #f9f9f9;
-}
-
-/* Header styles */
-header {
-  background-color: #0077b6;
-  color: white;
-  padding: 40px 20px;
-  text-align: center;
-}
-
-header h1 {
-  margin: 0;
-  font-size: 36px;
-}
-
-header p {
-  margin-top: 10px;
-  font-size: 18px;
-}
-
-/* Section spacing */
-section {
-  padding: 30px 20px;
-}
-
-/* Section containers */
-.about, .courses, .fee, .contact {
-  max-width: 1000px;
-  margin: auto;
-}
-
-/* Headings */
-h2 {
-  color: #0077b6;
-  margin-bottom: 10px;
-}
-
-/* Courses list */
-.courses ul {
-  list-style: none;
-  padding: 0;
-}
-
-.course li {
-  background-color: white;
-  padding: 15px;
-  margin-bottom: 10px;
-  border-left: 5px solid #0077b6;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-  transition: transform 0.2s;
-}
-
-.courses li:hover {
-  transform: translateY(-3px);
-}
-.fee ul {
-  list-style: none;
-  padding: 0;
-}
-.fee li {
-  background-color: white;
-  padding: 15px;
-  margin-bottom: 10px;
-  border-left: 5px solid #0077b6;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-  transition: transform 0.2s;
-}
-.fee li:hover {
-  transform: translateY(-3px);
-}
-
-/* Contact buttons */
-.contact a {
-  display: inline-block;
-  margin: 10px 10px 0 0;
-  padding: 12px 20px;
-  font-size: 16px;
-  text-decoration: none;
-  border-radius: 8px;
-  color: white;
-  transition: background 0.3s ease;
-}
-
-.call-btn {
-  background-color: #28a745;
-}
-
-.call-btn:hover {
-  background-color: #218838;
-}
-
-.whatsapp-btn {
-  background-color: #25D366;
-}
-
-.whatsapp-btn:hover {
-  background-color: #1ebe5d;
-}
-
-/* Footer */
-footer {
-  background-color: #333;
-  color: white;
-  text-align: center;
-  padding: 15px;
-  font-size: 14px;
-}
-
-/* Responsive design */
-@media (max-width: 600px) {
-  header h1 {
-    font-size: 26px;
-  }
-
-  .contact a {
-    display: block;
-    width: 100%;
-    box-sizing: border-box;
-  }
-}
-  </style>
 
   <header>
     <h1>Mourish Education</h1>
     <p>Empowering Education, Inspiring Futures</p>
   </header>
 
-  <section class="about">
+  <section class="about container">
     <h2>About Us</h2>
-    <p>Mourish Education is committed to delivering high-quality education to learners of all levels. We offer a range of educational programs and guidance for students looking to succeed academically and professionally in computer science.</p>
+    <p>Mourish Education is committed to delivering high-quality education for all learners. We offer a variety of programs to help students succeed academically and professionally.</p>
   </section>
 
-  <section class="courses">
-    <h2>Our Programs</h2>
+  <section class="courses container">
+    <h2>Our Courses</h2>
     <ul>
-      <li>Online Tutoring for School Students (6st to 12th Grade)</li>
-      <li>Learn app development and website development.</li>
+      <li>Online Tutoring (6th to 12th Grade)</li>
+      <li>App & Website Development</li>
+      <li>Spoken English & Communication Skills</li>
       <li>Computer Basics & Coding for Kids</li>
+      <li>Career Counseling & Admission Guidance</li>
     </ul>
   </section>
 
-  <section class="fee">
-    <h2>fee</h2>
+  <section class="fees container">
+    <h2>Fee Details</h2>
     <ul>
-      <li>demo class 1 day</li>
-      <li>monthly: ₹250</li>
-      <li>yearly: ₹3,000</li>
+      <li>👨‍🏫 Demo Class: <strong>1 Day – Free</strong></li>
+      <li>📅 Monthly Fee: <strong>₹250</strong></li>
+      <li>📆 Yearly Fee: <strong>₹3,000</strong></li>
+      <li>🎯 One-time Career Counseling: <strong>₹250</strong></li>
     </ul>
   </section>
-  
-  <section class="contact">
+
+  <section class="join container">
+    <h2>Join Now</h2>
+    <form id="joinForm">
+      <input type="text" placeholder="Your Name" required><br>
+      <input type="email" placeholder="Your Email" required><br>
+      <input type="tel" placeholder="Phone Number" required><br>
+      <select required>
+        <option value="" disabled selected>Select Course</option>
+        <option>Online Tutoring</option>
+        <option>App & Web Development</option>
+        <option>Spoken English</option>
+        <option>Computer Basics & Coding</option>
+        <option>Career Counseling</option>
+      </select><br>
+      <button type="submit">Submit</button>
+    </form>
+    <button onclick="window.print()" class="print-btn">📄 Download Course & Fee Info</button>
+  </section>
+
+  <section class="contact container">
     <h2>Contact Us</h2>
-    <p>For more details or to enroll in a course, reach out to us directly.</p>
+    <p>Call or chat with us directly:</p>
     <a href="tel:+919659233313" class="call-btn">📞 Call Us</a>
-    <a href="https://wa.me/919659233313" target="_blank" class="whatsapp-btn">💬 Chat on WhatsApp</a>
+    <a href="https://wa.me/919659233313" class="whatsapp-btn" target="_blank">💬 Chat on WhatsApp</a>
   </section>
 
   <footer>
