@@ -39,7 +39,7 @@ section {
 }
 
 /* Section containers */
-.about, .courses, .contact {
+.about, .courses, .fee, .contact {
   max-width: 1000px;
   margin: auto;
 }
@@ -66,6 +66,21 @@ h2 {
 }
 
 .courses li:hover {
+  transform: translateY(-3px);
+}
+.fee ul {
+  list-style: none;
+  padding: 0;
+}
+.fee li {
+  background-color: white;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-left: 5px solid #0077b6;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+.fee li:hover {
   transform: translateY(-3px);
 }
 
@@ -139,7 +154,7 @@ footer {
     </ul>
   </section>
 
-  <section class="course">
+  <section class="fee">
     <h2>fee</h2>
     <ul>
       <li>demo class 1 day</li>
