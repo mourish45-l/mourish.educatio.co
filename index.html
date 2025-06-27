@@ -7,6 +7,118 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <style>
+    /* Reset and base styles */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  background-color: #f9f9f9;
+}
+
+/* Header styles */
+header {
+  background-color: #0077b6;
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 36px;
+}
+
+header p {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+/* Section spacing */
+section {
+  padding: 30px 20px;
+}
+
+/* Section containers */
+.about, .courses, .contact {
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* Headings */
+h2 {
+  color: #0077b6;
+  margin-bottom: 10px;
+}
+
+/* Courses list */
+.courses ul {
+  list-style: none;
+  padding: 0;
+}
+
+.courses li {
+  background-color: white;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-left: 5px solid #0077b6;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.courses li:hover {
+  transform: translateY(-3px);
+}
+
+/* Contact buttons */
+.contact a {
+  display: inline-block;
+  margin: 10px 10px 0 0;
+  padding: 12px 20px;
+  font-size: 16px;
+  text-decoration: none;
+  border-radius: 8px;
+  color: white;
+  transition: background 0.3s ease;
+}
+
+.call-btn {
+  background-color: #28a745;
+}
+
+.call-btn:hover {
+  background-color: #218838;
+}
+
+.whatsapp-btn {
+  background-color: #25D366;
+}
+
+.whatsapp-btn:hover {
+  background-color: #1ebe5d;
+}
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  font-size: 14px;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 26px;
+  }
+
+  .contact a {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+  </style>
 
   <header>
     <h1>Mourish Education</h1>
