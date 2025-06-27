@@ -55,17 +55,7 @@
       box-shadow: 0 1px 4px rgba(0,0,0,0.1);
     }
 
-    form input, form select {
-      padding: 10px;
-      width: 90%;
-      max-width: 400px;
-      font-size: 16px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      margin-bottom: 10px;
-    }
-
-    form button, .print-btn, .call-btn, .whatsapp-btn {
+    .print-btn, .call-btn, .whatsapp-btn {
       display: inline-block;
       margin: 10px 10px 0 0;
       padding: 12px 20px;
@@ -85,7 +75,7 @@
       background-color: #25D366;
     }
 
-    .print-btn, form button {
+    .print-btn {
       background-color: #0077b6;
     }
 
@@ -102,13 +92,24 @@
         font-size: 26px;
       }
 
-      form input, form select, form button, .print-btn {
-        width: 100%;
-      }
-
-      .call-btn, .whatsapp-btn {
+      .call-btn, .whatsapp-btn, .print-btn {
         width: 100%;
         margin: 10px 0;
+      }
+    }
+
+    /* Hide everything except fee section during print */
+    @media print {
+      body * {
+        visibility: hidden;
+      }
+      #fee-print, #fee-print * {
+        visibility: visible;
+      }
+      #fee-print {
+        position: absolute;
+        top: 0;
+        left: 0;
       }
     }
   </style>
@@ -136,7 +137,7 @@
     </ul>
   </section>
 
-  <section class="fees container">
+  <section class="fees container" id="fee-print">
     <h2>Fee Details</h2>
     <ul>
       <li>👨‍🏫 Demo Class: <strong>1 Day – Free</strong></li>
@@ -146,23 +147,8 @@
     </ul>
   </section>
 
-  <section class="join container">
-    <h2>Join Now</h2>
-    <form id="joinForm">
-      <input type="text" placeholder="Your Name" required><br>
-      <input type="email" placeholder="Your Email" required><br>
-      <input type="tel" placeholder="Phone Number" required><br>
-      <select required>
-        <option value="" disabled selected>Select Course</option>
-        <option>Online Tutoring</option>
-        <option>App & Web Development</option>
-        <option>Spoken English</option>
-        <option>Computer Basics & Coding</option>
-        <option>Career Counseling</option>
-      </select><br>
-      <button type="submit">Submit</button>
-    </form>
-    <button onclick="window.print()" class="print-btn">📄 Download Course & Fee Info</button>
+  <section class="container">
+    <button onclick="window.print()" class="print-btn">📄 Download Fee Details (PDF)</button>
   </section>
 
   <section class="contact container">
