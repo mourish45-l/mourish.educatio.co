@@ -6,33 +6,40 @@
   <title>Mourish Education</title>
   <meta name="theme-color" content="#2196f3">
   <style>
-    body { font-family: 'Segoe UI', sans-serif; margin: 0; background-color: #f9f9f9; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background-color: #f9f9f9;
+    }
     header {
       background-color: #0077b6;
       color: white;
       padding: 40px 20px;
       text-align: center;
-      position: relative;
     }
-    .auth-btns {
-      position: absolute;
-      right: 20px;
-      top: 20px;
+    header h1 {
+      margin: 0;
+      font-size: 36px;
     }
-    .auth-btns button {
-      background: white;
+    header p {
+      margin-top: 10px;
+      font-size: 18px;
+    }
+    section {
+      padding: 30px 20px;
+    }
+    .container {
+      max-width: 1000px;
+      margin: auto;
+    }
+    h2 {
       color: #0077b6;
-      padding: 10px 15px;
-      margin-left: 8px;
-      border: none;
-      border-radius: 6px;
-      font-weight: bold;
-      cursor: pointer;
+      margin-bottom: 10px;
     }
-    section { padding: 30px 20px; }
-    .container { max-width: 1000px; margin: auto; }
-    h2 { color: #0077b6; margin-bottom: 10px; }
-    ul { list-style: none; padding: 0; }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
     li {
       background: white;
       padding: 15px;
@@ -64,64 +71,15 @@
     }
     @media (max-width: 600px) {
       header h1 { font-size: 26px; }
-      .call-btn, .whatsapp-btn, .print-btn { width: 100%; margin: 10px 0; }
+      .call-btn, .whatsapp-btn, .print-btn {
+        width: 100%;
+        margin: 10px 0;
+      }
     }
     @media print {
       body * { visibility: hidden; }
       #fee-print, #fee-print * { visibility: visible; }
       #fee-print { position: absolute; top: 0; left: 0; }
-    }
-
-    /* Modal styles */
-    .modal, .terms-modal {
-      display: none; position: fixed; top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.6);
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-    }
-    .modal-content, .terms-content {
-      background: white;
-      padding: 30px;
-      border-radius: 10px;
-      width: 90%;
-      max-width: 400px;
-      text-align: center;
-      position: relative;
-      max-height: 90vh;
-      overflow-y: auto;
-    }
-    .modal-content input {
-      width: 100%;
-      padding: 12px;
-      margin: 10px 0;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-    }
-    .modal-content button {
-      padding: 10px 15px;
-      margin: 10px 0;
-      width: 100%;
-      border: none;
-      border-radius: 6px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    .google-btn { background: #4285f4; color: white; }
-    .login-submit { background: #0077b6; color: white; }
-    .close-btn {
-      position: absolute; top: 10px; right: 15px;
-      font-size: 20px; cursor: pointer; color: #999;
-    }
-    .terms-label {
-      font-size: 14px;
-      text-align: left;
-    }
-    .terms-label a {
-      color: #0077b6;
-      cursor: pointer;
-      text-decoration: underline;
     }
   </style>
 </head>
@@ -130,15 +88,11 @@
   <header>
     <h1>Mourish Education</h1>
     <p>Empowering Education, Inspiring Futures</p>
-    <div class="auth-btns">
-      <button onclick="openModal('login')">Login</button>
-      <button onclick="openModal('signup')">Sign Up</button>
-    </div>
   </header>
 
   <section class="about container">
     <h2>About Us</h2>
-    <p>Mourish Education is committed to delivering high-quality education for all learners.</p>
+    <p>Mourish Education is committed to delivering high-quality education for all learners. We offer a variety of programs to help students succeed academically and professionally.</p>
   </section>
 
   <section class="courses container">
@@ -166,119 +120,14 @@
   <section class="contact container">
     <h2>Contact Us</h2>
     <p>Call, mail or chat with us directly:</p>
-    <a href="mailto:mourisheducation@gmail.com" class="mail-btn" target="_blank">📧 mail us on gmail</a>
+    <a href="mailto:mourisheducation@gmail.com" class="mail-btn" target="_blank">📧 Mail Us</a>
     <a href="tel:+919659233313" class="call-btn">📞 Call Us</a>
-    <a href="https://wa.me/919659233313" class="whatsapp-btn" target="_blank">💬 Chat on WhatsApp</a>
+    <a href="https://wa.me/916374037002" class="whatsapp-btn" target="_blank">💬 Chat on WhatsApp</a>
   </section>
 
   <footer>
     &copy; 2025 Mourish Education. All rights reserved.
   </footer>
 
-  <!-- Auth Modal -->
-  <div class="modal" id="authModal">
-    <div class="modal-content">
-      <span class="close-btn" onclick="closeModal()">&times;</span>
-      <h2 id="modalTitle">Login</h2>
-      <input type="email" id="email" placeholder="Email" required>
-      <input type="password" id="password" placeholder="Password" required>
-      <label class="terms-label">
-        <input type="checkbox" id="acceptTerms">
-        I accept the <a onclick="openTerms()">Terms & Conditions</a>
-      </label>
-      <button class="login-submit" id="submitBtn">Login</button>
-      <button class="google-btn" onclick="loginWithGoogle()">Continue with Google</button>
-    </div>
-  </div>
-
-  <!-- Terms Modal -->
-  <div class="terms-modal" id="termsModal">
-    <div class="terms-content">
-      <span class="close-btn" onclick="closeTerms()">&times;</span>
-      <h3>Terms & Conditions</h3>
-      <p>
-        By accessing and using Mourish Education, you agree to the following:<br><br>
-        - You will not misuse our platform.<br>
-        - All course content is for personal use only.<br>
-        - We may update these terms anytime.<br>
-        - Respect instructors and other users.<br>
-        - Your data will be handled responsibly.<br><br>
-        -Refund available if you get TC(Transfer Certificate) or You are changing different area.
-      </p>
-    </div>
-  </div>
-
-  <!-- Firebase Auth Script -->
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js";
-    import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-analytics.js";
-    import {
-      getAuth,
-      signInWithPopup,
-      GoogleAuthProvider,
-      signInWithEmailAndPassword,
-      createUserWithEmailAndPassword
-    } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-auth.js";
-
-    const firebaseConfig = {
-      apiKey: "AIzaSyDsD45pM8PM4VgeBASceBaiO69mCbqUPHE",
-      authDomain: "mourish-education.firebaseapp.com",
-      projectId: "mourish-education",
-      storageBucket: "mourish-education.firebasestorage.app",
-      messagingSenderId: "28402952102",
-      appId: "1:28402952102:web:4527fb201dc8f113c05167",
-      measurementId: "G-FEKJW9L9XF"
-    };
-
-    const app = initializeApp(firebaseConfig);
-    const analytics = getAnalytics(app);
-    const auth = getAuth(app);
-    const provider = new GoogleAuthProvider();
-
-    let currentMode = "login"; // or "signup"
-
-    window.openModal = (mode) => {
-      currentMode = mode;
-      document.getElementById("modalTitle").textContent = mode === "signup" ? "Sign Up" : "Login";
-      document.getElementById("submitBtn").textContent = mode === "signup" ? "Sign Up" : "Login";
-      document.getElementById("authModal").style.display = "flex";
-    };
-
-    window.closeModal = () => document.getElementById("authModal").style.display = "none";
-    window.openTerms = () => document.getElementById("termsModal").style.display = "flex";
-    window.closeTerms = () => document.getElementById("termsModal").style.display = "none";
-
-    document.getElementById("submitBtn").onclick = async () => {
-      const email = document.getElementById("email").value;
-      const pass = document.getElementById("password").value;
-      const accepted = document.getElementById("acceptTerms").checked;
-      if (!accepted) return alert("Please accept the Terms & Conditions.");
-
-      try {
-        if (currentMode === "login") {
-          await signInWithEmailAndPassword(auth, email, pass);
-          alert("Login successful");
-        } else {
-          await createUserWithEmailAndPassword(auth, email, pass);
-          alert("Account created successfully");
-        }
-        closeModal();
-      } catch (err) {
-        alert("Error: " + err.message);
-      }
-    };
-
-    window.loginWithGoogle = async () => {
-      const accepted = document.getElementById("acceptTerms").checked;
-      if (!accepted) return alert("Please accept the Terms & Conditions.");
-      try {
-        await signInWithPopup(auth, provider);
-        alert("Google sign-in successful");
-        closeModal();
-      } catch (err) {
-        alert("Google Sign-In failed: " + err.message);
-      }
-    };
-  </script>
 </body>
 </html>
