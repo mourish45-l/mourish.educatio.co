@@ -10,6 +10,7 @@
       font-family: 'Segoe UI', sans-serif;
       margin: 0;
       background-color: #f9f9f9;
+      padding-bottom: 60px; /* For bottom menu space */
     }
     header {
       background-color: #0077b6;
@@ -70,11 +71,67 @@
       padding: 15px;
       font-size: 14px;
     }
+    form {
+      margin-top: 20px;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+    button[type="submit"] {
+      background-color: #0077b6;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button[type="submit"]:hover {
+      background-color: #005f8b;
+    }
+    /* Bottom Menu (Left-Aligned Vertical) */
+    .bottom-menu {
+      position: fixed;
+      bottom: 10px;
+      left: 10px;
+      background: #0077b6;
+      display: flex;
+      flex-direction: column;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    }
+    .bottom-menu a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 15px;
+      font-size: 16px;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
+    .bottom-menu a:last-child {
+      border-bottom: none;
+    }
+    .bottom-menu a:hover {
+      background: #005f8b;
+    }
     @media (max-width: 600px) {
       header h1 { font-size: 26px; }
-      .call-btn, .whatsapp-btn, .print-btn {
+      .call-btn, .whatsapp-btn, .print-btn, .mail-btn, .school-app-btn {
         width: 100%;
         margin: 10px 0;
+      }
+      .bottom-menu {
+        left: 5px;
+        bottom: 5px;
       }
     }
     @media print {
@@ -91,12 +148,12 @@
     <p>Empowering Education, Inspiring Futures</p>
   </header>
 
-  <section class="about container">
+  <section class="about container" id="about">
     <h2>About Us</h2>
     <p>Mourish Education is committed to delivering high-quality education for all learners. We offer a variety of programs to help students succeed academically and professionally.</p>
   </section>
 
-  <section class="courses container">
+  <section class="courses container" id="courses">
     <h2>Our Courses</h2>
     <ul>
       <li>Online Tutoring (6th to 12th Grade)</li>
@@ -118,19 +175,36 @@
     <button onclick="window.print()" class="print-btn">📄 Download Fee Details (PDF)</button>
   </section>
 
-  <section class="contact container">
+  <section class="contact container" id="contact">
     <h2>Contact Us</h2>
     <p>Call, mail or chat with us directly:</p>
-    <a href="mailto:mourisheducation@gmail.com" class="mail-btn" target="_blank">📧 Mail Us</a>
+    <a href="mailto:youremail@example.com" class="mail-btn" target="_blank">📧 Mail Us</a>
     <a href="tel:+919659233313" class="call-btn">📞 Call Us</a>
     <a href="https://wa.me/916374037002" class="whatsapp-btn" target="_blank">💬 Chat on WhatsApp</a>
-    <h3>Already a student or teacher. Click this to go to School App</h3>
-    <a href="https://mourish45-l.github.io/app.school.mourish.education.co/" class="school-app-btn" target="_blank">Click this for go to School App</a>
+
+    <h3>Already a student or teacher? Go to School App</h3>
+    <a href="https://mourish45-l.github.io/app.school.mourish.education.co/" class="school-app-btn" target="_blank">Go to School App</a>
+
+    <form action="mailto:youremail@example.com" method="post" enctype="text/plain">
+      <h2>Send us a Message</h2>
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Email</button>
+    </form>
   </section>
 
   <footer>
     &copy; 2025 Mourish Education. All rights reserved.
   </footer>
+
+  <!-- Bottom Menu (Left Corner) -->
+  <div class="bottom-menu">
+    <a href="#about">About</a>
+    <a href="#courses">Courses</a>
+    <a href="#fee-print">Fees</a>
+    <a href="#contact">Contact</a>
+  </div>
 
 </body>
 </html>
