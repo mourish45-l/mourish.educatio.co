@@ -11,20 +11,36 @@
       margin: 0;
       background-color: #f9f9f9;
     }
+
+    /* Header with Logo */
     header {
       background-color: #0077b6;
       color: white;
-      padding: 40px 20px;
-      text-align: center;
+      padding: 20px;
     }
-    header h1 {
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      justify-content: flex-start;
+    }
+
+    .logo {
+      height: 60px;
+      width: auto;
+    }
+
+    .header-text h1 {
       margin: 0;
       font-size: 36px;
     }
-    header p {
-      margin-top: 10px;
+
+    .header-text p {
+      margin: 5px 0 0;
       font-size: 18px;
     }
+
     section {
       padding: 30px 20px;
     }
@@ -120,7 +136,7 @@
       background-color: #003f5c;
     }
     @media (max-width: 600px) {
-      header h1 { font-size: 26px; }
+      .header-text h1 { font-size: 26px; }
       .call-btn, .whatsapp-btn, .print-btn, .mail-btn, .school-app-btn {
         width: 100%;
         margin: 10px 0;
@@ -143,8 +159,13 @@
 <body>
 
   <header>
-    <h1>Mourish Education</h1>
-    <p>Empowering Education, Inspiring Futures</p>
+    <div class="logo-container">
+      <img src="file_0000000005fc61f7b49897d2d52c9ef0 (1).png" alt="Mourish Logo" class="logo">
+      <div class="header-text">
+        <h1>Mourish Education</h1>
+        <p>Empowering Education, Inspiring Futures</p>
+      </div>
+    </div>
   </header>
 
   <section class="about container" id="about">
