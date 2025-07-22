@@ -98,39 +98,38 @@
       background-color: #005f8b;
     }
 
-    /* Bottom Menu (Normal Section) */
-    .bottom-menu {
-      background: #0077b6;
+    /* Bottom Menu */
+    .bottom-menu-static {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-top: 10px;
       padding: 15px 20px;
-      color: white;
+      background: #0077b6;
     }
-    .bottom-menu h2 {
-      margin: 0 0 10px 0;
-      font-size: 20px;
-    }
-    .bottom-menu a {
+    .bottom-menu-static a {
+      background-color: #005f8b;
       color: white;
       text-decoration: none;
-      margin-right: 15px;
-      padding: 8px 12px;
-      background: #005f8b;
-      border-radius: 4px;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-size: 16px;
       transition: background 0.3s;
-      display: inline-block;
     }
-    .bottom-menu a:hover {
-      background: #003f5c;
+    .bottom-menu-static a:hover {
+      background-color: #003f5c;
     }
-
     @media (max-width: 600px) {
       header h1 { font-size: 26px; }
       .call-btn, .whatsapp-btn, .print-btn, .mail-btn, .school-app-btn {
         width: 100%;
         margin: 10px 0;
       }
-      .bottom-menu a {
-        display: block;
-        margin-bottom: 8px;
+      .bottom-menu-static {
+        flex-direction: column;
+      }
+      .bottom-menu-static a {
+        width: 100%;
       }
     }
 
@@ -178,7 +177,7 @@
   <section class="contact container" id="contact">
     <h2>Contact Us</h2>
     <p>Call, mail or chat with us directly:</p>
-    <a href="mailto:youremail@example.com" class="mail-btn" target="_blank">📧 Mail Us</a>
+    <a href="mailto:mourisheducation@gmail.com" class="mail-btn" target="_blank">📧 Mail Us</a>
     <a href="tel:+919659233313" class="call-btn">📞 Call Us</a>
     <a href="https://wa.me/916374037002" class="whatsapp-btn" target="_blank">💬 Chat on WhatsApp</a>
 
@@ -194,9 +193,8 @@
     </form>
   </section>
 
-  <!-- Bottom Menu (Before Footer) -->
-  <div class="bottom-menu">
-    <h2>Quick Links</h2>
+  <!-- Bottom Menu (Above Footer) -->
+  <div class="bottom-menu-static">
     <a href="#about">About</a>
     <a href="#courses">Courses</a>
     <a href="#fee-print">Fees</a>
