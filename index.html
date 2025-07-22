@@ -98,21 +98,25 @@
       background-color: #005f8b;
     }
 
-    /* Bottom Menu (above footer) */
+    /* Bottom Menu (Normal Section) */
     .bottom-menu {
       background: #0077b6;
-      padding: 10px;
-      display: flex;
-      gap: 15px;
-      flex-wrap: wrap;
+      padding: 15px 20px;
+      color: white;
+    }
+    .bottom-menu h2 {
+      margin: 0 0 10px 0;
+      font-size: 20px;
     }
     .bottom-menu a {
       color: white;
       text-decoration: none;
-      padding: 8px 15px;
-      border-radius: 4px;
+      margin-right: 15px;
+      padding: 8px 12px;
       background: #005f8b;
+      border-radius: 4px;
       transition: background 0.3s;
+      display: inline-block;
     }
     .bottom-menu a:hover {
       background: #003f5c;
@@ -124,13 +128,9 @@
         width: 100%;
         margin: 10px 0;
       }
-      .bottom-menu {
-        flex-direction: column;
-        align-items: flex-start;
-      }
       .bottom-menu a {
-        width: 100%;
-        margin-bottom: 5px;
+        display: block;
+        margin-bottom: 8px;
       }
     }
 
@@ -194,8 +194,9 @@
     </form>
   </section>
 
-  <!-- Bottom Menu (Above Footer) -->
+  <!-- Bottom Menu (Before Footer) -->
   <div class="bottom-menu">
+    <h2>Quick Links</h2>
     <a href="#about">About</a>
     <a href="#courses">Courses</a>
     <a href="#fee-print">Fees</a>
