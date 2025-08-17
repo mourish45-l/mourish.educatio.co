@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Apply - Mourish Education</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Roboto', Arial, sans-serif;
+      background: #f7f7f7;
+      margin: 0;
+      padding: 20px;
+      color: #222;
+    }
+    h1 {
+      text-align: center;
+      color: #184b75;
+      margin-bottom: 20px;
+    }
+    form {
+      max-width: 500px;
+      margin: auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 8px #ccc;
+    }
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 10px;
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 8px;
+      margin-top: 6px;
+      margin-bottom: 12px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+    button {
+      background-color: #184b75;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 4px;
+      margin-top: 10px;
+    }
+    button:hover {
+      background-color: #0f2f4a;
+    }
+    #admissionNumberDisplay {
+      text-align: center;
+      margin-top: 15px;
+      font-weight: bold;
+      color: #184b75;
+    }
+    .back-link {
+      display: block;
+      text-align: center;
+      margin-top: 20px;
+      color: #184b75;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .back-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <h1>Mourish Education - Admission Form</h1>
+  <form id="admissionForm">
+    <label for="applicantName">Full Name:</label>
+    <input type="text" id="applicantName" name="applicantName" required />
+
+    <label for="grade">Grade (1 to 12):</label>
+    <input type="number" id="grade" name="grade" min="1" max="12" required />
+
+    <label for="age">Age:</label>
+    <input type="number" id="age" name="age" min="5" max="20" required />
+
+    <label for="prevSchool"> School:</label>
+    <input type="text" id="prevSchool" name="prevSchool" required />
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required />
+
+    <label for="phone">Phone Number:</label>
+    <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required />
+
+    <button type="submit">Submit Application</button>
+  </form>
+
+  <p id="admissionNumberDisplay"></p>
+
+  <a href="/index.html" class="back-link">← Back to Home</a>
+
+  <script>
+    // Retrieve last sequence number for a grade from browser storage
+    function getSequenceNumForGrade(grade) {
+      const key = 'ME_GRADE_SEQ' + grade;
+      let seq = localStorage.getItem(key);
+      return seq ? parseInt(seq, 10) : 0;
+    }
+
+    // Increment and store sequence number
+    function incrementSequenceNumForGrade(grade) {
+      const key = 'ME_SEQ_GRADE_' + grade;
+      let seq = getSequenceNumForGrade(grade);
+      seq++;
+      localStorage.setItem(key, seq);
+      return seq;
+    }
+
+    document.getElementById('admissionForm').onsubmit = function(e) {
+      e.preventDefault();
+
+      const grade = parseInt(document.getElementById('grade').value, 10);
+      if (!(grade >= 1 && grade <= 12)) {
+        alert('Please enter a valid grade from 1 to 12.');
+        return;
+      }
+
+      const seqNum = incrementSequenceNumForGrade(grade);
+      const seqStr = seqNum.toString().padStart(3, '0'); // e.g., 001
+      const admissionNumber = `ME${grade}${seqStr}`; // Format: ME + Grade + 3-digit number
+
+      document.getElementById('admissionNumberDisplay').innerText =
+        `Application submitted! Your admission number is: ${admissionNumber}`;
+
+      this.reset();
+    };
+  </script>
+</body>
+</html>
