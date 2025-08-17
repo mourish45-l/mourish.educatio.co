@@ -6,22 +6,39 @@
   <title>Mourish Education - Bot School</title>
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet" />
   <style>
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateX(-50px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes scaleUp {
+      from { transform: scale(0.9); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
     body {
       font-family: 'Roboto', Arial, sans-serif;
       margin: 0;
       background: #f7f7f7;
       color: #222;
+      animation: fadeIn 1s ease-in-out;
     }
     header {
       background: linear-gradient(90deg, #1e5799, #7db9e8);
       color: #fff;
       padding: 40px 0;
       text-align: center;
+      animation: slideIn 1s ease-in-out;
     }
     nav {
       background: #184b75;
       padding: 15px 0;
       text-align: center;
+      animation: scaleUp 0.8s ease-in-out;
     }
     nav a {
       color: #fff;
@@ -29,10 +46,12 @@
       text-decoration: none;
       font-weight: 700;
       letter-spacing: 1px;
+      transition: all 0.3s ease;
     }
     nav a:hover {
       text-decoration: underline;
       color: #ffd700;
+      transform: scale(1.1);
     }
     .container {
       max-width: 1200px;
@@ -41,30 +60,42 @@
       background: #fff;
       box-shadow: 0 0 8px #ccc;
       border-radius: 8px;
+      animation: fadeIn 1s ease-in-out;
     }
     section {
       margin-bottom: 30px;
+      animation: fadeIn 1s ease-in-out;
     }
     h2 {
       color: #184b75;
+      position: relative;
+      animation: slideIn 0.8s ease;
     }
-    .gallery-list {
-      list-style: square;
-      padding-left: 24px;
+    .gallery-list li {
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+    .gallery-list li:hover {
+      transform: translateX(8px);
+      color: #1e5799;
     }
     table {
       width: 100%;
       border-collapse: collapse;
       margin-top: 12px;
+      animation: fadeIn 1.2s ease;
     }
     th,
     td {
       padding: 10px;
       border-bottom: 1px solid #eee;
       text-align: left;
+      transition: background-color 0.3s ease;
     }
     th {
       background: #e9eaef;
+    }
+    tr:hover td {
+      background: #f1f4fa;
     }
     @media (max-width: 600px) {
       .container {
@@ -79,6 +110,7 @@
       color: #fff;
       text-align: center;
       padding: 16px 0;
+      animation: fadeIn 2s ease-in-out;
     }
     button {
       background-color: #184b75;
@@ -89,9 +121,11 @@
       cursor: pointer;
       border-radius: 4px;
       margin-top: 10px;
+      transition: all 0.3s ease;
     }
     button:hover {
       background-color: #0f2f4a;
+      transform: scale(1.05);
     }
     input,
     textarea {
@@ -103,9 +137,20 @@
       border: 1px solid #ccc;
       font-size: 16px;
       box-sizing: border-box;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    input:focus,
+    textarea:focus {
+      border-color: #1e5799;
+      outline: none;
+      box-shadow: 0 0 6px rgba(30, 87, 153, 0.4);
     }
     a {
       color: black;
+      transition: color 0.3s ease;
+    }
+    a:hover {
+      color: #1e5799;
     }
   </style>
 </head>
@@ -248,4 +293,3 @@
   <footer>Mourish Education. All rights reserved.</footer>
 </body>
 </html>
-  
