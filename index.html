@@ -1,295 +1,255 @@
 <!DOCTYPE html>
 <html lang="en">
+
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mourish Education - Bot School</title>
-  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet" />
-  <style>
-    /* Animations */
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes slideIn {
-      from { opacity: 0; transform: translateX(-50px); }
-      to { opacity: 1; transform: translateX(0); }
-    }
-    @keyframes scaleUp {
-      from { transform: scale(0.9); opacity: 0; }
-      to { transform: scale(1); opacity: 1; }
-    }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mourish Education Pro Plus Max</title>
 
-    body {
-      font-family: 'Roboto', Arial, sans-serif;
-      margin: 0;
-      background: #f7f7f7;
-      color: #222;
-      animation: fadeIn 1s ease-in-out;
-    }
-    header {
-      background: linear-gradient(90deg, #1e5799, #7db9e8);
-      color: #fff;
-      padding: 40px 0;
-      text-align: center;
-      animation: slideIn 1s ease-in-out;
-    }
-    nav {
-      background: #184b75;
-      padding: 15px 0;
-      text-align: center;
-      animation: scaleUp 0.8s ease-in-out;
-    }
-    nav a {
-      color: #fff;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: 700;
-      letter-spacing: 1px;
-      transition: all 0.3s ease;
-    }
-    nav a:hover {
-      text-decoration: underline;
-      color: #ffd700;
-      transform: scale(1.1);
-    }
-    .container {
-      max-width: 1200px;
-      margin: 20px auto;
-      padding: 0 16px;
-      background: #fff;
-      box-shadow: 0 0 8px #ccc;
-      border-radius: 8px;
-      animation: fadeIn 1s ease-in-out;
-    }
-    section {
-      margin-bottom: 30px;
-      animation: fadeIn 1s ease-in-out;
-    }
-    h2 {
-      color: #184b75;
-      position: relative;
-      animation: slideIn 0.8s ease;
-    }
-    .gallery-list li {
-      transition: transform 0.3s ease, color 0.3s ease;
-    }
-    .gallery-list li:hover {
-      transform: translateX(8px);
-      color: #1e5799;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 12px;
-      animation: fadeIn 1.2s ease;
-    }
-    th,
-    td {
-      padding: 10px;
-      border-bottom: 1px solid #eee;
-      text-align: left;
-      transition: background-color 0.3s ease;
-    }
-    th {
-      background: #e9eaef;
-    }
-    tr:hover td {
-      background: #f1f4fa;
-    }
-    @media (max-width: 600px) {
-      .container {
-        padding: 0 4px;
-      }
-      nav a {
-        margin: 0 6px;
-      }
-    }
-    footer {
-      background: #184b75;
-      color: #fff;
-      text-align: center;
-      padding: 16px 0;
-      animation: fadeIn 2s ease-in-out;
-    }
-    button {
-      background-color: #184b75;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      font-weight: 700;
-      cursor: pointer;
-      border-radius: 4px;
-      margin-top: 10px;
-      transition: all 0.3s ease;
-    }
-    button:hover {
-      background-color: #0f2f4a;
-      transform: scale(1.05);
-    }
-    input,
-    textarea {
-      width: 100%;
-      padding: 8px;
-      margin-top: 6px;
-      margin-bottom: 12px;
-      border-radius: 4px;
-      border: 1px solid #ccc;
-      font-size: 16px;
-      box-sizing: border-box;
-      transition: border-color 0.3s ease, box-shadow 0.3s ease;
-    }
-    input:focus,
-    textarea:focus {
-      border-color: #1e5799;
-      outline: none;
-      box-shadow: 0 0 6px rgba(30, 87, 153, 0.4);
-    }
-    a {
-      color: black;
-      transition: color 0.3s ease;
-    }
-    a:hover {
-      color: #1e5799;
-    }
-  </style>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Material Design Lite CSS -->
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css" />
+
+    <!-- Font Awesome CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+    
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #fafafa;
+        }
+
+        header {
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1030;
+            background: #fff;
+        }
+
+        .nav-link {
+            font-weight: 600;
+        }
+
+        .hero-section {
+            background: url('https://images.unsplash.com/photo-1556740766-916635f4df34?auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
+            height: 400px;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            padding: 0 1rem;
+        }
+
+        .hero-section h1 {
+            font-size: 3rem;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+        }
+
+        .hero-section p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+        }
+
+        /* Card styles for courses */
+        .course-card {
+            transition: transform 0.3s;
+        }
+
+        .course-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        /* Event table */
+        table {
+            border-collapse: separate;
+            border-spacing: 0 10px;
+        }
+
+        th, td {
+            padding: 0.75rem 1rem;
+            text-align: left;
+        }
+
+        th {
+            background-color: #3f51b5;
+            color: white;
+            border-radius: 8px 8px 0 0;
+        }
+
+        td {
+            background: white;
+            border-bottom: 2px solid #ececec;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2e3a87;
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+
+        footer a {
+            color: #ffb74d;
+            transition: color 0.3s;
+        }
+
+        footer a:hover, footer a:focus {
+            color: #fff176;
+            text-decoration: underline;
+        }
+    </style>
 </head>
+
+
 <body>
-  <header>
-    <h1>Mourish Education</h1>
-    <p>Bot School: Empowering young minds with coding skills from Grade 1 to 12</p>
-  </header>
-  <nav>
-    <a href="#about">About Us</a>
-    <a href="#courses">Courses</a>
-    <a href="#admissions">Admissions</a>
-    <a href="#fees">Fees</a>
-    <a href="#faculty">Faculty</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#events">Events</a>
-    <a href="#calendar">Calendar</a>
-    <a href="#contact">Contact</a>
-  </nav>
-  <div class="container">
-    <section id="about">
-      <h2>About Mourish Education</h2>
-      <p>
-        Mourish Education is a specialized bot school dedicated to teaching students from Grade 1 to Grade 12 block-based coding, app development, and web development in online classes. Our goal is to build strong programming foundations and foster creativity in technology through hands-on learning and dynamic projects.
-      </p>
-    </section>
-    <section id="courses">
-      <h2>Our Courses</h2>
-      <ul>
-        <li><strong>Block-Based Coding:</strong> Interactive visual programming to learn logical thinking and problem-solving.</li>
-        <li><strong>App Development:</strong> Building mobile apps using user-friendly tools and coding practices.</li>
-        <li><strong>Web Development:</strong> Designing and coding websites with HTML, CSS, and JavaScript fundamentals.</li>
-      </ul>
-      <p>Courses are tailored progressively to match the skill levels of students in each grade.</p>
-    </section>
-    <section id="admissions">
-      <h2>Admissions</h2>
-      <p>
-        Enroll your child in Mourish Education to start their journey into the world of coding and development. Admission forms are available online and at our office.
-      </p>
-      <button onclick="window.location.href='apply.html';">Apply Now</button>
-    </section>
-    <section id="fees">
-      <h2>Fee Structure</h2>
-      <p>Please refer to the admissions office or check the downloadable fee sheet for details.</p>
-    </section>
-    <section id="faculty">
-      <h2>Our Faculty</h2>
-      <p>
-        Our passionate educators specialize in computer science and technology education, dedicated to guiding and supporting students as they develop their coding and development skills.
-      </p>
-    </section>
-    <section id="gallery">
-      <h2>Gallery</h2>
-      <ul class="gallery-list">
-        <li>Interactive coding classrooms</li>
-        <li>Project-based learning workshops</li>
-        <li>Student challenges & competitions</li>
-        <li>Collaborative app development sessions</li>
-      </ul>
-    </section>
-    <section id="events">
-      <h2>Upcoming Events</h2>
-      <table>
-        <tr>
-          <th>Date</th>
-          <th>Event</th>
-          <th>Details</th>
-        </tr>
-        <tr>
-          <td>Aug 17, 2025</td>
-          <td>Competition: App Developers</td>
-          <td>Create an app in Flutter about Mourish Education; winners will have their apps published.</td>
-        </tr>
-        <tr>
-          <td>Aug 24, 2025</td>
-          <td>App Developers Result Announcement</td>
-          <td>Top 3 winners will be announced and the app to be published revealed. <a href="winner.html">Click here for results!</a></td>
-        </tr>
-        <tr>
-          <td>Oct 20, 2025</td>
-          <td>Web Development Workshop</td>
-          <td>Hands-on beginner-friendly web development training sessions.</td>
-        </tr>
-      </table>
-    </section>
-    <!-- Calendar Section -->
-    <section id="calendar">
-      <h2>Academic Calendar</h2>
-      <table>
-        <tr>
-          <th>Date</th>
-          <th>Event</th>
-          <th>Description</th>
-        </tr>
-        <tr>
-          <td>Aug 17, 2025</td>
-          <td>Competition: App Developers</td>
-          <td>Students create an app in Flutter about Mourish Education. Winning app will be published.</td>
-        </tr>
-        <tr>
-          <td>Aug 24, 2025</td>
-          <td>App Developer Winners Announcement</td>
-          <td>First 3 winners and publishing app will be announced.</td>
-        </tr>
-        <tr>
-          <td>Oct 20, 2025</td>
-          <td>Web Development Workshop</td>
-          <td>Hands-on beginner-friendly web development training session.</td>
-        </tr>
-        <tr>
-          <td>Dec 15 – Dec 20, 2025</td>
-          <td>Mid-Year Exams</td>
-          <td>Exams for all grades, conducted online.</td>
-        </tr>
-        <tr>
-          <td>Mar 10 – Mar 20, 2026</td>
-          <td>Final Exams</td>
-          <td>End-of-year assessments for all students.</td>
-        </tr>
-      </table>
-    </section>
-    <section id="contact">
-      <h2>Contact Us</h2>
-      <p>
-        Email: mourisheducation@gmail.com<br />
-        Phone: +91 96592 33313
-      </p>
-      <form action="mailto:mourisheducation@gmail.com" method="post" enctype="text/plain">
-        <label for="name">Name:</label><br />
-        <input type="text" id="name" name="name" required /><br />
 
-        <label for="msg">Message:</label><br />
-        <textarea id="msg" name="message" rows="3" required></textarea><br />
+    <header class="mdl-layout__header mdl-layout__header--waterfall">
+        <div class="container d-flex justify-content-between align-items-center py-3">
+            <h1 class="text-primary m-0">Mourish Education</h1>
+            <nav>
+                <ul class="nav">
+                    <li class="nav-item"><a href="#home" class="nav-link text-dark"><i class="fas fa-home me-1"></i> Home</a></li>
+                    <li class="nav-item"><a href="#course" class="nav-link text-dark"><i class="fas fa-book-open me-1"></i> Courses</a></li>
+                    <li class="nav-item"><a href="#event" class="nav-link text-dark"><i class="fas fa-calendar-alt me-1"></i> Events</a></li>
+                    <li class="nav-item"><a href="#about" class="nav-link text-dark"><i class="fas fa-info-circle me-1"></i> About</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link text-dark"><i class="fas fa-phone me-1"></i> Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-        <button type="submit">Send Message</button>
-      </form>
+    <section class="hero-section">
+        <h1>Empowering Future Coders & Developers</h1>
+        <p>Online Coding, App Development & Web Design Courses From Grades 1 to 12</p>
+        <a href="#course" class="btn btn-warning btn-lg"><i class="fas fa-book-reader me-2"></i>Explore Courses</a>
     </section>
-  </div>
-  <footer>Mourish Education. All rights reserved.</footer>
+
+    <main class="container my-5">
+
+        <section id="course" class="mb-5">
+            <h2 class="text-center mb-4"><i class="fas fa-graduation-cap me-2"></i>Our Courses</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card course-card mdl-shadow--2dp">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-puzzle-piece me-2"></i>Block-Based Coding</h5>
+                            <p class="card-text">Engage from basics to advanced coding concepts with block-based programming tailored for young learners.</p>
+                            <a href="#" class="btn btn-primary"><i class="fas fa-arrow-right me-1"></i> Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card course-card mdl-shadow--2dp">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-mobile-alt me-2"></i>App Development</h5>
+                            <p class="card-text">Master creating engaging mobile and web apps using Flutter and React.js with project-based learning.</p>
+                            <a href="#" class="btn btn-primary"><i class="fas fa-arrow-right me-1"></i> Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card course-card mdl-shadow--2dp">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-laptop-code me-2"></i>Web Development</h5>
+                            <p class="card-text">Learn the fundamentals and advanced techniques in HTML, CSS, JavaScript, Bootstrap, and more.</p>
+                            <a href="#" class="btn btn-primary"><i class="fas fa-arrow-right me-1"></i> Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="event" class="mb-5">
+            <h2 class="text-center mb-4"><i class="fas fa-calendar-check me-2"></i>Upcoming Events</h2>
+            <div class="table-responsive">
+                <table class="w-100">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Event</th>
+                            <th>Details</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Oct 5, 2025</td>
+                            <td>Competition: App Developers</td>
+                            <td>Create an app in Flutter about Mourish Education; winners will have their apps published.</td>
+                        </tr>
+                        <tr>
+                            <td>Oct 29, 2025</td>
+                            <td>Results Announcement</td>
+                            <td>Top 3 winners will be announced and the published app revealed.</td>
+                        </tr>
+                        <tr>
+                            <td>Nov 20, 2025</td>
+                            <td>Web Development Workshop</td>
+                            <td>Hands-on beginner-friendly web development training session.</td>
+                        </tr>
+                        <tr>
+                            <td>Dec 15 - Dec 20, 2025</td>
+                            <td>Mid-Year Exams</td>
+                            <td>Online exams for all grades.</td>
+                        </tr>
+                        <tr>
+                            <td>Mar 10 - Mar 20, 2026</td>
+                            <td>Final Exams</td>
+                            <td>End-of-year assessments for all students.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="contact" class="mb-5">
+    <h2 class="text-center mb-4"><i class="fas fa-envelope me-2"></i>Contact Us</h2>
+    
+    <!-- Contact form with animations -->
+    <form action="send-email.php" method="post" class="mx-auto" style="max-width: 600px;">
+        <div class="mb-3">
+            <label for="name" class="form-label">Name <span class="text-danger">*</span></label>
+            <input type="text" id="name" name="name" class="form-control animated-input" placeholder="Your full name" required />
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email <span class="text-danger">*</span></label>
+            <input type="email" id="email" name="email" class="form-control animated-input" placeholder="example@email.com" required />
+        </div>
+        <div class="mb-3">
+            <label for="message" class="form-label">Message <span class="text-danger">*</span></label>
+            <textarea id="message" name="message" rows="4" class="form-control animated-input" placeholder="Write your message here..." required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary w-100"><i class="fas fa-paper-plane me-2"></i>Send Message</button>
+    </form>
+
+</section>
+
+
+    </main>
+
+    <footer>
+        <p>© 2025 Mourish Education | Email: <a href="mailto:mourisheducation@gmail.com">mourisheducation@gmail.com</a>
+        <p>Follow us on
+            <a href="https://whatsapp.com/channel/0029VbAjDxt1yT21rTUsR02l" aria-label="whatsapp"><i class="fab fa-whatsapp me-1"></i></a>
+        </p>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Material Design Lite JS -->
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 </body>
-</html>
+
+  </html>
+      
